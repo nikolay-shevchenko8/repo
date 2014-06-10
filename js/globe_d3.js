@@ -1,8 +1,3 @@
-///////// TODO ZOOM! /////////
-
-// function zoomGlobe() {
-//     return ... ;
-// }
 var casesLiter = {nom: 'литр', gen: 'литра', plu: 'литров'},
     litersValue,
     litersCorrect;
@@ -23,7 +18,7 @@ function init() {
     //Setting projection
 
     var projection = d3.geo.orthographic()
-        .scale(235) //.scale(function() {return zoomGlobe();}) //245
+        .scale(235)
         .rotate([0, 0])
         .translate([236, 236])
         .clipAngle(90);
@@ -47,7 +42,7 @@ function init() {
         one = d3.select("#one"),
         threeText = d3.select("#three"),
         four = d3.select("#four"),
-        two = d3.select("#two"), //тут блок 2
+        two = d3.select("#two"),
         countryList = d3.select("body")
             .append("select")
             .attr("id", "countrySelect")
@@ -61,16 +56,10 @@ function init() {
         ocean_fill.append("stop").attr("offset", "5%").attr("stop-color", "#b7cce0");
         ocean_fill.append("stop").attr("offset", "100%").attr("stop-color", "#4881bb");
 
-    //var color_domain = [0.1, 100, 250, 450, 750, 1250, 2000];
-    var color_domain = [0.01, 10, 50, 75, 100, 150, 200]; // м3 / чел / год (в быту!)
-
-    //var ext_color_domain = [0, 0.1, 100, 250, 450, 750, 1250, 2000]; // м3 / чел / год (общий расход страны!)
-    var ext_color_domain = [0, 0.1, 10, 50, 75, 100, 150, 200];
-
-    //var legend_labels = ["н/д", "< 100", "< 250", "< 450", "< 750", "< 1250", "< 2000", "> 2000"];
-    var legend_labels = ["н/д", "< 10", "< 50", "< 75", "< 100", "< 150", "< 200", "> 200"]; 
-
-    var color = d3.scale.threshold().domain(color_domain).range(["#9f9f9f", "#d4301f", "#d47d1f", "#bdd41f", "#4ed41f", "#3fa81a", "#348d16", "#245f10"]);
+    var color_domain = [0.01, 10, 50, 75, 100, 150, 200],
+        color = d3.scale.threshold().domain(color_domain).range(["#9f9f9f", "#d4301f", "#d47d1f", "#bdd41f", "#4ed41f", "#3fa81a", "#348d16", "#245f10"]),
+        ext_color_domain = [0, 0.1, 10, 50, 75, 100, 150, 200],
+        legend_labels = ["н/д", "< 10", "< 50", "< 75", "< 100", "< 150", "< 200", "> 200"]; 
 
     appendIntro();
 
@@ -79,8 +68,6 @@ function init() {
         .defer(d3.csv, "data/water_consumption.csv")
         .await(ready);
 
-    //Main function
-
     function ready(error, world, waterData) {
 
         var countryById = {},
@@ -88,22 +75,17 @@ function init() {
             domesticById = {},
             countries = topojson.feature(world, world.objects.countries).features;
 
-            //countryList.append("option").text("").property("value", 9999).property("selected", "selected");
-
         waterData.forEach(function (d) {
-
-            ///////////////// ЗАПОЛНЯЕМ 'select' //////////////////
+            // fill 'select' //
             option = countryList.append("option");
             option.text(d.country);
             option.property("value", d.id);
-            ///////////////// //////////////// //////////////////
+            // fill 'select' //
 
             countryById[d.id] = d.country;
             countryTextById[d.id] = d.country_h2;
             domesticById[d.id] = +d.domestic;
         });
-
-        ///////////////////////////////////////////////
 
         //Drawing countries on the globe
 
@@ -112,13 +94,11 @@ function init() {
         .enter().append("path")
         .attr("class", "land")
         .attr("d", path)
-        .style("fill", function (d) { return color(domesticById[d.id]); }) //consumeById
-
-        ///////////// CLICK /////////////
+        .style("fill", function (d) { return color(domesticById[d.id]); })
 
         .on("click", function (d) {
 
-            $('#countrySelect option').prop('selected', function() { return this.defaultSelected; }); /////////////////////////////////////////////////////
+            $('#countrySelect option').prop('selected', function() { return this.defaultSelected; });
 
             removeIntro();
             bubble.transition().duration(500).style("height", "192px"); 
@@ -200,8 +180,6 @@ function init() {
 
         d3.select("select").on("change", function () {
 
-        //if (this.value != 9999) {
-
             removeIntro();
             bubble.transition().duration(500).style("height", "192px"); 
 
@@ -244,32 +222,28 @@ function init() {
                     };
                 })
             })();
-        //}
+        
         });
 
         function country(countries, selected) {
-            // console.log("countries.length = " + countries.length);
-            // console.log("selected.value = " + selected.value);
 
             for (var i = 0, l = countries.length; i < l; i++) {
                 if (countries[i].id == selected.value) { return countries[i]; }
             }
         };
-
     };
 
-    //Adding legend for our Choropleth
+    //Adding map legend
 
     var legend = svg.selectAll("g.legend")
-    .data(ext_color_domain)
-    .enter().append("g")
-    .attr("class", "legend");
+        .data(ext_color_domain)
+        .enter().append("g")
+        .attr("class", "legend");
 
     var ls_w = 50, ls_h = 20;
 
     legend.append("rect")
-    .attr("x", function (d, i) { return width - (i * ls_w) - 2 * ls_w + 40; }) //data и [i] (0...7)
-    //.attr("y", 495)
+    .attr("x", function (d, i) { return width - (i * ls_w) - 2 * ls_w + 40; })
     .attr("y", 520)
     .attr("width", ls_w)
     .attr("height", ls_h)
@@ -277,7 +251,7 @@ function init() {
     .style("opacity", 1);
 
     legend.append("text")
-    .attr("x", function (d, i) { return width - (i * ls_w) - ls_w; }) //console.log(width, height);
+    .attr("x", function (d, i) { return width - (i * ls_w) - ls_w; })
     .attr("y", 560) 
     .attr("font-weight", "bold")
     .attr("font-size", "16px")
@@ -289,9 +263,9 @@ function init() {
     .attr("y", 510)
     .attr("font-weight", "bold")
     .attr("font-size", "18px")
-    // .style("fill", "#808080")
     .text("Потребление воды в быту (тыс. л./чел./год):")
-    initThreeJs(); 
+
+    initThreeJs(); //draw WebGL scene 
 }
 
 function units(num, cases) {
@@ -315,11 +289,8 @@ function units(num, cases) {
 }
 
 function appendIntro() {
-
     clickHelp = true;
     cubeScale = 0;
-
-
 
     bubble.style("right", "45%").style("width", "37%").transition().duration(500).style("height", "350px");
 
@@ -390,18 +361,3 @@ function removeIntro() {
     clickHelp = false;
     while (bubbleTextIntro.firstChild) { bubbleTextIntro.removeChild(bubbleTextIntro.firstChild); }
 }
-
-// total.text("Общее потребление: " + numeral(totalById[d.id]).format('0,0') + " м. куб. / год");
-// totalCapita.text("На душу населения: " + numeral(consumeById[d.id]).format('0,0') + " м. куб. / год");
-// domestic.text("Бытовые расходы: " + numeral(domesticById[d.id]).format('0,0') + " м. куб. / год / чел");
-// industrial.text("Производство: " + numeral(industrById[d.id]).format('0,0') + " м. куб. / год / чел");
-// agricultural.text("Сельское хозяйство: " + numeral(agricultById[d.id]).format('0,0') + " м. куб. / год / чел");
-// population.text("Население страны: " + numeral(popById[d.id]).format('0,0') + " человек");
-
-// блок 2
-        // total = d3.select("#dataContainer").append("h4"),
-        // totalCapita = d3.select("#dataContainer").append("h4"),
-        // domestic = d3.select("#dataContainer").append("h4"),
-        // industrial = d3.select("#dataContainer").append("h4"),
-        // agricultural = d3.select("#dataContainer").append("h4"),
-        // population = d3.select("#dataContainer").append("h4"),

@@ -1,12 +1,12 @@
 @font-face {
-font-family: MyriadPro;
-src: url("fonts/MyriadPro-Regular.otf") format("opentype");
+  font-family: MyriadPro;
+  src: url("fonts/MyriadPro-Regular.otf") format("opentype");
 }
 
 @font-face {
-font-family: MyriadPro;
-font-weight: bold;
-src: url("fonts/MyriadPro-Bold.otf") format("opentype");
+  font-family: MyriadPro;
+  font-weight: bold;
+  src: url("fonts/MyriadPro-Bold.otf") format("opentype");
 }
 
 html {
@@ -27,12 +27,24 @@ body {
   overflow-y: hidden;
 }
 
+#social { 
+  position: absolute;
+  top: 97px;
+  right: 44%;
+}
+
+/*--------------------------------------------------*/
+/*----------------------HEADER----------------------*/
+/*--------------------------------------------------*/
+
+/*-----------------------title----------------------*/
 #header {
   position: absolute;
   left: 0px;
   top: 0px;
   height: 64px;
   width: 72%;
+  text-shadow: 1px 1px 0px #8d8d8d;
   background: -moz-linear-gradient(top, rgba(30,249,87,1) 1%, rgba(42,212,42,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(30,249,87,1)), color-stop(100%,rgba(42,212,42,1))); /* Chrome,Safari4+ */
   background: -o-linear-gradient(top, rgba(30,249,87,1) 1%,rgba(42,212,42,1) 100%); /* Opera 11.10+ */
@@ -41,46 +53,6 @@ body {
   -webkit-box-shadow: inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
   -moz-box-shadow:    inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
   box-shadow:         inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
-  text-shadow: 1px 1px 0px #8d8d8d;
-}
-
-#footer-left {
-  position: absolute;
-  margin: 16px 0px 18px 64px;
-  left: 0px;
-  top: 700px;
-  width: 40%;
-}
-
-a {
-  font-weight: bold;
-  font-size: 18px;
-  color: #2f82c8;
-/*  padding-left: 16px;
-  padding-top: 8px;*/
-}
-
-.small {
-
-  font-size: 14px;
-}
-
-a:hover {
-  color: #24b624;
-/*  padding-left: 16px;
-  padding-top: 8px;*/
-}
-
-#footer-right {
-  position: absolute;
-  /*text-align: right;*/
-  font-weight: bold;
-  font-size: 14px;
-  color: #808080;
-  margin: 16px 64px 18px 0px;
-  right: 0px;
-  top: 700px;
-  width: 32.5%;
 }
 
 h2 {
@@ -91,7 +63,60 @@ h2 {
   padding-left: 32px;
   padding-top: 8px;
 }
+/*-----------------------title----------------------*/
 
+/*----------------------dropdown--------------------*/
+select {
+  position: absolute;
+  right: -2px;
+  top: -86px;
+  opacity: 0;
+  height: 150px;
+  width: 28.11%;
+}
+
+select:hover { opacity: .2; }
+
+#countriesList {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 51px;
+  width: 28%;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  padding-top: 13px;
+  font-size: 24px;
+  text-decoration: none;  text-shadow: 1px 1px 0px #000;
+  background: -moz-linear-gradient(top, rgba(129,218,255,1) 0%, rgba(42,158,212,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(129,218,255,1)), color-stop(100%,rgba(42,158,212,1))); /* Chrome,Safari4+ */
+  background: -o-linear-gradient(top, rgba(129,218,255,1) 0%,rgba(42,158,212,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(129,218,255,1) 0%,rgba(42,158,212,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(129,218,255,1) 0%,rgba(42,158,212,1) 100%); /* W3C */
+  -webkit-box-shadow: inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow:    inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
+  box-shadow:         inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
+}
+
+#countriesList:hover {
+  background-color: #3aa1f8;
+  color: #fff;
+  text-shadow: 1px 1px 0px #8d8d8d;
+  background: -moz-linear-gradient(top, rgba(129,238,255,1) 0%, rgba(40,179,212,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(129,238,255,1)), color-stop(100%,rgba(40,179,212,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* W3C */
+}
+/*----------------------dropdown--------------------*/
+
+/*--------------------------------------------------*/
+/*-----------------------BODY-----------------------*/
+/*--------------------------------------------------*/
+
+/*-----------------three.js container---------------*/
 #threejs {
   position: absolute;
   padding: 0px;
@@ -100,14 +125,15 @@ h2 {
   height: 640px;
   width: 50%;
 }
+/*-----------------three.js container---------------*/
 
+/*------------------talk bubble shape---------------*/
 #bubble {
   position: absolute;
   right: 45%;
   top: 128px;
   width: 37%;
   height: 350px;
-  /*height: 192px;*/
   padding: 0px;
   background-color: #fff000;
   opacity: 0.40;
@@ -127,7 +153,9 @@ h2 {
   width: 0;
   height: 0;
 }
+/*------------------talk bubble shape---------------*/
 
+/*-------------------talk bubble text---------------*/
 #bubbleText {
   position: absolute;
   right: 45%;
@@ -198,7 +226,9 @@ h2 {
   padding-left: 16px;
   padding-top: 0px;
 }
+/*-------------------talk bubble text---------------*/
 
+/*--------------------globe container---------------*/
 #globeDiv {
   position: absolute;
   padding: 0px;
@@ -206,60 +236,7 @@ h2 {
   top: 128px;
   height: 576px;
   width: 35%;
-  /*background-color: #fffccf;*/
   z-index: 99;
-}
-
-select {
-  position: absolute;
-  right: -2px;
-  top: -86px;
-  opacity: 0;
-  height: 150px;
-  width: 28.11%;
-}
-
-select:hover { opacity: .2; }
-
-#countriesList {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 51px;
-  width: 28%;
-  text-align: center;
-  font-weight: bold;
-  color: #fff;
-  padding-top: 13px;
-  font-size: 24px;
-  text-decoration: none;  text-shadow: 1px 1px 0px #000;
-  background: -moz-linear-gradient(top, rgba(129,218,255,1) 0%, rgba(42,158,212,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(129,218,255,1)), color-stop(100%,rgba(42,158,212,1))); /* Chrome,Safari4+ */
-  background: -o-linear-gradient(top, rgba(129,218,255,1) 0%,rgba(42,158,212,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(129,218,255,1) 0%,rgba(42,158,212,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(129,218,255,1) 0%,rgba(42,158,212,1) 100%); /* W3C */
-  -webkit-box-shadow: inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
-  -moz-box-shadow:    inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
-  box-shadow:         inset 0px -8px 0px 0px rgba(0, 0, 0, 0.11);
-}
-
-#countriesList:hover {
-  background-color: #3aa1f8;
-  color: #fff;
-  text-shadow: 1px 1px 0px #8d8d8d;
-  background: -moz-linear-gradient(top, rgba(129,238,255,1) 0%, rgba(40,179,212,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(129,238,255,1)), color-stop(100%,rgba(40,179,212,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(129,238,255,1) 0%,rgba(40,179,212,1) 100%); /* W3C */
-}
-
-#sosocial { 
-  position: absolute;
-  top: 97px;
-  right: 44%;
-
 }
 
 .water { fill: url(#ocean_fill); }
@@ -277,7 +254,8 @@ select:hover { opacity: .2; }
 
 .focused { stroke-width: 3px; }
 
-#tooltip {
+/*country tooltip*/
+#tooltip { 
   position: absolute;
   display: none;
   pointer-events: none;
@@ -295,4 +273,39 @@ select:hover { opacity: .2; }
   -webkit-box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.2);
   -moz-box-shadow:    3px 3px 11px 0px rgba(50, 50, 50, 0.2);
   box-shadow:         3px 3px 11px 0px rgba(50, 50, 50, 0.2);
+}
+/*--------------------globe container---------------*/
+
+/*--------------------------------------------------*/
+/*----------------------FOOTER----------------------*/
+/*--------------------------------------------------*/
+
+#footer-left {
+  position: absolute;
+  margin: 16px 0px 18px 64px;
+  left: 0px;
+  top: 700px;
+  width: 40%;
+}
+
+a {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2f82c8;
+}
+
+a:hover { color: #24b624; }
+
+.small { font-size: 14px; }
+
+#footer-right {
+  position: absolute;
+  font-weight: bold;
+  font-size: 14px;
+  color: #808080;
+  margin: 16px 64px 18px 0px;
+  right: 0px;
+  top: 700px;
+  width: 32.5%;
+  z-index: 99;
 }
