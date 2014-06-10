@@ -247,8 +247,8 @@ select:hover { opacity: .2; }
 #sosocial { 
   position: absolute;
   top: 97px;
-  right: 43.7%;
-  width: 37%;
+  right: 45%;
+
 }
 
 .water { fill: url(#ocean_fill); }
