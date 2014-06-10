@@ -37,7 +37,7 @@ body {
   position: absolute;
   margin: 16px 0px 18px 64px;
   left: 0px;
-  top: 100%;
+  top: 700px;
   width: 40%;
 }
 
@@ -68,7 +68,7 @@ a:hover {
   color: #808080;
   margin: 16px 64px 18px 0px;
   right: 0px;
-  top: 100%;
+  top: 700px;
   width: 32.5%;
 }
 
