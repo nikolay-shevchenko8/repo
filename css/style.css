@@ -245,7 +245,7 @@ select:hover { opacity: .2; }
 }
 
 #vk_like { /*.yashare-auto-init*/
-  position: absolute;
+  /*position: absolute;*/
   top: 97px;
   right: 43.7%;
   width: 37%;
