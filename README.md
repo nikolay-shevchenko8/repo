@@ -1,4 +1,4 @@
-seeyou8.github.io
+Глобальное потребление водных ресурсов - 3D-инфографика
 =================
 
-Domestic water consumption (per country, per capita) 3D-visualization
+D3.js + Three.js
