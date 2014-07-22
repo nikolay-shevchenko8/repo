@@ -1,87 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+	html {
+	  position: relative;
+	  min-height: 100%;
+	  min-width: 100%;
+	  height:100%;
+	  width: 100%;
+	  overflow-x: hidden;
+	  overflow-x: hidden;
+	}
 
-	<head>
-		<meta charset="utf-8">
-		<title>Глобальное потребление водных ресурсов – 3D-инфографика</title>
-		<!-- Shaders -->
-		<script id="vertexShader" type="x-shader/x-vertex">
-			varying vec2 vUv;
-			void main() 
-			{ 
-			    vUv = uv;
-			    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-			}
-			</script>
+	body {
+	  min-height: 100%;
+	  min-width: 100%;
+	  height:100%;
+	  width: 100%;
+	  font: 24px Arial;
+	  line-height: 30px;
+	  padding: 0;
+	  background-color: #ccc;
+	}
 
-			<!-- fragment shader a.k.a. pixel shader -->
-			<script id="fragmentShader" type="x-shader/x-vertex"> 
-			uniform sampler2D baseTexture;
-			uniform float baseSpeed;
-			uniform sampler2D noiseTexture;
-			uniform float noiseScale;
-			uniform float alpha;
-			uniform float time;
-
-			varying vec2 vUv;
-			void main() 
-			{
-			    vec2 uvTimeShift = vUv + vec2( -0.7, 1.5 ) * time * baseSpeed;  
-			    vec4 noiseGeneratorTimeShift = texture2D( noiseTexture, uvTimeShift );
-			    vec2 uvNoiseTimeShift = vUv + noiseScale * vec2( noiseGeneratorTimeShift.r, noiseGeneratorTimeShift.b );
-			    vec4 baseColor = texture2D( baseTexture, uvNoiseTimeShift );
-
-			    baseColor.a = alpha;
-			    gl_FragColor = baseColor;
-			}  </script>
-
-		<script type="text/javascript" src="vendor/d3.v3.min.js"></script>
-		<script type="text/javascript" src="vendor/queue.v1.min.js"></script>
-		<script type="text/javascript" src="vendor/topojson.v1.min.js"></script>
-		<script type="text/javascript" src="vendor/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="vendor/three.min.js"></script>
-
-		<link href="css/style.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/globe_d3.js"></script>
-		<script type="text/javascript" src="js/globe_3d.js"></script>
-
-		<script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
-		<script type="text/javascript">VK.init({apiId: 4407819, onlyWidgets: true});</script>
-	</head>
-
-	<body onload="init();">
-		<div id="header">
-			<h2>Глобальное потребление водных ресурсов</h2>
-		</div>
-
-		<a style="display:block" href="">
-			<div id="countriesList">⇩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Список стран &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇩</div>
-		</a>
-
-		<div id="threejs"></div>
-		<div id="bubbleTextIntro"></div>
-		<div id="bubbleText">
-			<p id="one"></p>
-			<p id="two"></p>
-			<p id="three"></p>
-			<p id="four"></p>
-		</div>
-		<div id="bubble"></div>
-
-		<div id="globeDiv"></div>
-
-		<div id="footer-left">
-			<a href="#" onclick="appendIntro();">Справка</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="http://worldwater.org/water-data/" target="_blank">Источник данных</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="http://www.khronos.org/webgl/" target="_blank">Про WebGL</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="http://threejs.org/" target="_blank">О Three.js</a>
-		</div>
-		<div id="footer-right">
-			Идея и разработка: <a class="small" href="http://vk.com/seeyou8" target="_blank">Шевченко Н. В.</a>,<br>
-			студент 4 курса факультета ЭИ <a class="small" href="http://vk.com/ksithneu" target="_blank">кафедры КСиТ</a> ХНЭУ им. С. Кузнеца
-		</div>
-
-		<div align="center" id="social"><div id="vk_like"></div></div>
-		<script type="text/javascript">VK.Widgets.Like("vk_like", {type: "button"});</script>
-	</body>
+	#container {
+	  position: relative;
+	  top: 40px;
+	  width: 600px;
+	  height: 1810px;
+	  margin: 0 auto;
+	  background-color: #fff;
+	  text-align: center;
+	  vertical-align: middle;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<a href="/diploma">Диплом?</a>
+	</div>
+</body>
 </html>

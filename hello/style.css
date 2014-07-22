@@ -1,0 +1,322 @@
+*{margin:0; padding:0; }
+
+@font-face {
+    font-family: 'SegoeUi';
+    src: url('fonts/SegoeUI.eot');
+    src: url('fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SegoeUI.woff') format('woff'),
+         url('fonts/SegoeUI.ttf') format('truetype'),
+         url('fonts/SegoeUI.svg#quicksandlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUi-bold';
+    src: url('fonts/SegoeUI-Bold.eot');
+    src: url('fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SegoeUI-Bold.woff') format('woff'),
+         url('fonts/SegoeUI-Bold.ttf') format('truetype'),
+         url('fonts/SegoeUI-Bold.svg#quicksandlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUi-semibold';
+    src: url('fonts/SegoeUI-Semibold.eot');
+    src: url('fonts/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SegoeUI-Semibold.woff') format('woff'),
+         url('fonts/SegoeUI-Semibold.ttf') format('truetype'),
+         url('fonts/SegoeUI-Semibold.svg#quicksandlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUi-italic';
+    src: url('fonts/SegoeUI-Italic.eot');
+    src: url('fonts/SegoeUI-Italic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SegoeUI-Italic.woff') format('woff'),
+         url('fonts/SegoeUI-Italic.ttf') format('truetype'),
+         url('fonts/SegoeUI-Italic.svg#quicksandlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  height:100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  height:100%;
+  width: 100%;
+  font: 18px 'SegoeUi';
+  line-height: 30px;
+  padding: 0;
+  background-color: #d0d0d0;
+}
+
+h1 { font: 24px 'SegoeUi-bold'; }
+
+.white { color: white; }
+.red { color: red; }
+
+b {
+  font: 18px 'SegoeUi-semibold' !important;
+  font-style: normal;
+  font-weight: normal;
+}
+
+#container {
+  position: relative;
+  top: 40px;
+  width: 1260px;
+  height: 1810px; /*хз почему не 1850*/
+  margin: 0 auto;
+  background-color: #fff;
+  z-index: 1;
+}
+
+#content-block {
+  position: relative;
+  display: inline-block;
+  width: 1200px;
+  height: 1810px;
+  background-color: #fff;
+  float: left;
+}
+
+.shadow {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  float: left;
+  z-index: 100;
+}
+
+.left { background: url(img/shadow-left.jpg) no-repeat #d0d0d0; }
+.right { background: url(img/shadow-right.jpg) no-repeat #d0d0d0; }
+.bottom {
+  width: 1260px;
+  height: 40px;
+  background: url(img/shadow-bottom.jpg) no-repeat #d0d0d0;
+}
+
+#resume-title-bg {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  background: url(img/header-bg.jpg) #1d1d1d;
+}
+
+#resume-title-bg div {
+  position: relative;
+  padding:12px 0px 0px 60px;
+}
+
+.box {
+  position: relative;
+  height: 300px;
+  float: left;
+}
+
+.blue {
+  width: 540px;
+  background: url(img/info-bg.jpg) #1185c4;
+}
+
+#box-blue-content { margin: 30px 10px 20px 60px; }
+
+#box-blue-text {
+  margin: 10px 0 0 150px;
+  line-height: 30px;
+  color: white;
+}
+
+.blue img {
+  position: relative;
+  padding-right: 30px;
+  float: left;
+}
+
+.name { line-height: 25px; }
+
+.yellow {
+  width: 660px;
+  background: url(img/quote-bg.jpg) #db971c;
+}
+
+#box-yellow-content { margin: 26px 60px 0 70px; }
+
+#box-yellow-text {
+  margin: 10px 0 0 0;
+  font-family: 'SegoeUi-italic';
+  line-height: 25px;
+  color: white;
+}
+
+#col-left {
+  position: relative;
+  display: inline-block;
+  width: 570px;
+  height: 890px;
+  background-color: #fff;
+  float: left;
+}
+
+#col-left-content { margin: 30px 0 0 60px; }
+
+#col-left-content img {
+  position: relative;
+  padding-right: 6px;
+  float: left;
+}
+
+#lil-title {
+  margin: 16px 0 0 0;
+  line-height: 20px;
+}
+
+#years {
+  margin: 6px 0 6px 0px;
+  font: 14px 'SegoeUi-semibold';
+  color: #707070;
+}
+
+#speciality-line {
+  margin: 0 0 22px 0;
+  line-height: 20px;
+}
+
+#col-right {
+  position: relative;
+  display: inline-block;
+  width: 630px;
+  height: 890px;
+  background: url(img/gradient-up.png) repeat-x #fff;
+}
+
+#col-right-content { margin: 30px 60px 0 40px; }
+
+#col-right-content img {
+  position: relative;
+  padding-right: 12px;
+  float: left;
+}
+
+#programs-list { margin: -10px 0 30px 0; }
+
+#program-item { margin: 25px 0 0 0; }
+
+#program-descr {
+  position: relative;
+  margin-top: 2px;
+  font: 14px 'SegoeUi';
+  line-height: 15px;
+  color: #707070;
+}
+
+
+#extra-info-text,
+#extra-info-text p { margin-top: 10px; }
+
+#portfolio {
+  position: relative;
+  height: 390px;
+  width: 100%;
+  background: url(img/port-bg.jpg) no-repeat;
+}
+
+#portfolio-content { padding: 30px 60px 60px 60px; }
+
+#portfolio-content img {
+  position: relative;
+  padding-right: 10px;
+  float: left;
+}
+
+#circles {
+  margin-top: 40px;
+  height: 240px;
+  width: 150%;
+}
+
+.circle {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  margin-right: 90px;
+  behavior: url(vendor/pie/PIE.htc);
+  float: left;
+}
+
+.one { background: url(img/nazproekt.jpg) no-repeat ; }
+.one:hover { background: url(img/nazproekt-dark.jpg) no-repeat; }
+
+.two { background: url(img/mm.jpg) no-repeat #d0d0d0; }
+.two:hover { background: url(img/mm-dark.jpg) no-repeat; }
+
+.three { background: url(img/ei.jpg) no-repeat; }
+.three:hover { background: url(img/ei-dark.jpg) no-repeat; }
+
+.four { 
+  width: 60px;
+  height: 60px;
+  background: url(img/plus.png) no-repeat;
+  margin-top: 90px;
+}
+
+#weblancer-link {
+  display: none;
+  position: relative;
+  margin: -150px 0 0 750px;
+  line-height: 20px;
+  text-align: center;
+}
+
+#weblancer-link-close {
+  display: none;
+  position: relative;
+  margin: 5px 0 0 990px;
+  width: 30px;
+  height: 30px;
+  background: url(img/close.png) no-repeat;
+  cursor: pointer;
+}
+
+#weblancer-link-close:hover { background: url(img/close-hover.png) no-repeat; }
+
+.image-source-link {
+  font: 14px 'SegoeUi';
+  color: #3399ff;
+}
+
+.image-source-link:hover {
+  color: #fff;
+}
+
+
+.mfp-title { font: 14px 'SegoeUi'; }
+
+#footer {
+  position: absolute;
+  height: 170px;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#thank-you { padding: 32px 0 0 0; }
+
+#sign { padding: 15px 0 0 0;}
