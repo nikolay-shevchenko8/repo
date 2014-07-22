@@ -80,7 +80,7 @@ b {
   position: relative;
   top: 40px;
   width: 1260px;
-  height: 1810px; /*хз почему не 1850*/
+  height: 1810px;
   margin: 0 auto;
   background-color: #fff;
   z-index: 1;
@@ -226,7 +226,6 @@ b {
   color: #707070;
 }
 
-
 #extra-info-text,
 #extra-info-text p { margin-top: 10px; }
 
@@ -305,7 +304,6 @@ b {
 .image-source-link:hover {
   color: #fff;
 }
-
 
 .mfp-title { font: 14px 'SegoeUi'; }
 
